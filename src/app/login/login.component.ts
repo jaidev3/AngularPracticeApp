@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  result: any="";
+  result: any='';
   constructor(private loginserv: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
 
   onLogin(e: any) {
     e.preventDefault();
-    this.result = this.loginserv.userCheck(e);
-    if(this.result!=""){
+    this.result = this.loginserv.userCheck(e) 
+    if(this.loginserv.userCheck(e) !==''){
       this.router.navigate(['admin']);
     }
     

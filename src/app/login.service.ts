@@ -23,7 +23,7 @@ export class LoginService {
         e.target[1].value == this.userList[i].password
       ) {
         this.username = e.target[0].value;
-        return this.username;
+        return e.target[0].value;
       }
     }
   }

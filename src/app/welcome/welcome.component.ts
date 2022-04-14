@@ -9,6 +9,7 @@ import { LoginService } from '../login.service';
 export class WelcomeComponent implements OnInit {
   constructor(private loginserv:LoginService) {}
   firstname: any = '';
+
   ngOnInit(): void {
     this.firstname=this.loginserv.username
   }
