@@ -1,0 +1,9 @@
+<div class="welcome">
+  <p *ngIf="firstname != ''; else loginfirst">
+    Welcome To the App {{ firstname }}
+  </p>
+  <ng-template #loginfirst>
+    <p>Please Login to use our App</p>
+    <p>Don't have an account! register</p>
+  </ng-template>
+</div>
