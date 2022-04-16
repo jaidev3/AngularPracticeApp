@@ -8,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
   userData: any;
-  constructor(private http: HttpClient) {
-    http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res) => {
-      this.userData = res;
-      console.log(this.userData);
-    });
-  }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .subscribe((res) => {
+        this.userData = res;
+        console.log(this.userData);
+      });
+  }
 
   createPost(eve: HTMLInputElement) {
     let post = { title: eve.value };
